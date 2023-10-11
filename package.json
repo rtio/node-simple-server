@@ -1,0 +1,8 @@
+{
+	"scripts": {
+		"dev": "nodemon --inspect ./main.js"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
+}
