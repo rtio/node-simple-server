@@ -1,5 +1,5 @@
 const http = require('http');
-const { getPessoa, getPessoas } = require('./rotas/pessoas');
+const { getPessoa, getPessoas, getEndereco } = require('./rotas/pessoas');
 const { getCarro, getCarros } = require('./rotas/carros');
  
 const hostname = '127.0.0.1';
@@ -11,8 +11,11 @@ const server = http.createServer((req, res) => {
     if (req.url === '/pessoas') {
       return getPessoas(req, res);
     }
-    if (req.url.match(/\/pessoas\/[0-9]+/)) {
+    if (req.url.match(/^\/pessoas\/[0-9]+$/)) {
       return getPessoa(req, res);
+    }
+    if (req.url.match(/^\/pessoas\/[0-9]+\/endereco$/)) {
+      return getEndereco(req, res);
     }
     if (req.url === '/carros') {
       return getCarros(req, res);

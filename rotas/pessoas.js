@@ -19,7 +19,21 @@ function getPessoa(req, res) {
     return;
 }
 
+function getEndereco(req, res) {
+    const id = req.url.split('/')[2];
+    const pessoa = pessoas.find(p => p.id == id);
+    if (pessoa) {
+      res.statusCode = 200;
+      res.end(JSON.stringify(pessoa.endereco));
+      return;
+    }
+    res.statusCode = 404;
+    res.end();
+    return;
+}
+
 module.exports = {
     getPessoa,
-    getPessoas
+    getPessoas,
+    getEndereco
 }
