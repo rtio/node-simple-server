@@ -1,6 +1,6 @@
 const http = require('http');
-const { getPessoa, getPessoas, getEndereco } = require('./rotas/pessoas');
-const { getCarro, getCarros } = require('./rotas/carros');
+const { getPessoa, getPessoas, getEndereco } = require('./routes/pessoas');
+const { getCarro, getCarros } = require('./routes/carros');
  
 const hostname = '127.0.0.1';
 const port = 3000;

@@ -1,8 +1,11 @@
 {
 	"scripts": {
-		"dev": "nodemon --inspect ./main.js"
+		"dev": "nodemon --inspect ./app.js"
 	},
 	"devDependencies": {
 		"nodemon": "^3.0.1"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
 	}
 }
